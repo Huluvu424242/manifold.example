@@ -1,3 +1,4 @@
+image:https://travis-ci.org/FunThomas424242/manifold.example.svg?branch=master["Build Status", link="https://travis-ci.org/FunThomas424242/manifold.example"]
 
 ## Manifold Sample Project (Maven, IntelliJ)
 
