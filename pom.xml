@@ -15,6 +15,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+
+  <prerequisites>
+    <maven>3.6.0</maven>
+  </prerequisites>
+
+
   <dependencies>
     <!--Use all core Manifold features with 'manifold-all' -->
     <dependency>
@@ -23,9 +29,15 @@
       <version>${manifold-version}</version>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.4.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.tngtech.archunit</groupId>
+      <artifactId>archunit-junit5-api</artifactId>
+      <version>0.9.3</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -59,7 +71,34 @@
 
   <build>
     <plugins>
-
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <version>2.7</version>
+        <configuration>
+          <rulesUri>file:///${project.basedir}/etc/version-rules.xml</rulesUri>
+        </configuration>
+        <executions>
+          <execution>
+            <id>show-dep-updates</id>
+            <phase>
+              validate
+            </phase>
+            <goals>
+              <goal>display-dependency-updates</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>show-plugin-updates</id>
+            <phase>
+              validate
+            </phase>
+            <goals>
+              <goal>display-plugin-updates</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <!--
         *** JAVA 9+ MULTI-MODULE MODE ***
          (project defines module-info.java file)
@@ -171,5 +210,22 @@
 
     </plugins>
   </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
+
 
 </project>
