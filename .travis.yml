@@ -1,0 +1,13 @@
+language: java
+
+
+jdk:
+  - oraclejdk8
+
+install: ./mvnw clean
+
+
+script: ./mvnw install
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
