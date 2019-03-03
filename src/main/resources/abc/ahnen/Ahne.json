@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type" : "object",
+  "id" : "http://example.com/schemas/Ahne.json",
+
+  "definitions": {
+    "Anschrift": {
+      "type": "object",
+      "properties": {
+        "strasse": { "type": "string" },
+        "plz":           { "type": "string" },
+        "stadt":           { "type": "string" },
+        "land":          { "type": "string" }
+      },
+      "required": []
+    }
+  },
+
+  "properties" : {
+    "ContactAddresses" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "$ref" : "#/definitions/Anschrift"
+      }
+    },
+    "Geburtsdatum": {
+      "type" : "string",
+      "format" : "date"
+    },
+    "HomePhone" : {
+      "type" : "string"
+    },
+    "HomePhoneCountry" : {
+      "type" : "string"
+    },
+    "Name": {
+      "type" : "string"
+    },
+    "Vorname": {
+      "type" : "string"
+    },
+    "NumDependents" : {
+      "type" : "integer",
+      "format" : "int32"
+    },
+    "PrimaryAddress" : {
+      "type" : "object",
+      "$ref" : "#/definitions/Anschrift"
+    }
+  }
+}
