@@ -26,3 +26,13 @@ Use IntelliJ features such as:<lu>
  <li> Incremental Compilation
  <li> Hotswap Debugging
 </u>
+
+## Quellen im Neuland
+
+* https://jaxenter.de/manifold-typsystem-dynamisch-erweitern-69685
+* https://jaxenter.de/manifold-code-generator-java-metadata-74906
+* https://jaxenter.de/manifold-java-exstion-methods-77606
+* https://docs.oracle.com/javase/8/docs/jdk/api/javac/tree/com/sun/source/util/Plugin.html
+* http://manifold.systems/docs.html#working-with-intellij
+* http://manifold.systems/docs.html#build-your-own-manifold
+* https://github.com/manifold-systems/manifold-sample-project
